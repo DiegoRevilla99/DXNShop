@@ -4,6 +4,7 @@
  */
 package com.example.DXNShop.cliente;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -13,13 +14,17 @@ import javax.persistence.Table;
  * @author Alejandro Diaz Ruiz
  */
 @Entity
-@Table
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
+    @Column(name = "email")
     private String email;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "apellidos")
     private String apellidos;
+    @Column(name = "telefono")
     private String telefono;
 
     public Cliente() {
