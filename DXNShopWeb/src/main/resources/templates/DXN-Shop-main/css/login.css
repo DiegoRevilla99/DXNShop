@@ -1,0 +1,100 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #e99595 0%, #ffefef 100%);
+}
+
+.login-container {
+    height: 27em;
+    width: 50em;
+    margin: 6em auto;
+    align-items: center;
+  justify-content: center;
+    display: flex;
+  
+}
+
+.section{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.login-info-container {
+    width: 54%;
+    height: 27em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: cornsilk;
+    box-shadow:0 0 30px rgba(33, 36, 36, 0.9);  
+    border: black 4px solid;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    padding: 2rem;
+    width: 50%;
+    height: 100%;
+    background-color:rgb(0, 0, 0) ;
+    box-sizing: border-box;
+    box-shadow:0 0 30px rgba(33, 36, 36, 0.9); 
+    border: black 4px solid;
+    
+}
+
+.inputs-container{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+.title {
+    text-transform: capitalize;
+    font-family: "Homer Simpson UI";
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--title-bg);
+}
+
+.icono{
+    align-items: right;
+}
+.ingresar{
+    background: rgb(138, 1, 1);
+    color: rgb(255, 255, 255);
+    box-shadow:0 0 30px rgba(70, 71, 71, 0.9);
+    padding-left: -20px;
+    margin-top:-40px;
+    border-radius: 5rem;
+} 
+#lin{
+    color: rgb(7, 26, 194);
+}
+.Input{
+    transition: .8s;
+    background-color:white;
+    color:rgb(73, 71, 71);
+    border-color:black;
+    border-bottom-color:rgb(0, 10, 155);
+    border-bottom-style: groove;
+    border-width:4px;
+    width: 105%;
+}
+.Input:haver{
+    transition:.8s;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset;
+    border-bottom-color: red;
+}
+.Input:focus{
+    transition:.8s;
+    border-bottom-color: red;
+}

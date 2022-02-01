@@ -1,0 +1,28 @@
+.fondo {
+    background-color: #ffefef;
+    
+}
+.fondoBarra{
+    background-color: rgb(138, 1, 1);
+}
+
+
+h1,h2{
+    text-align:center;
+}
+
+.box{
+    padding: 5em 5em 0.5em 5em;
+    
+  }
+  .label_precio{
+    border-color: rgb(7, 7, 7);
+    border-width: 0.5px;
+    border-style: solid;
+    padding: 2%;   
+    background-color: white;
+    color: black  }
+  
+  
+  
+ 

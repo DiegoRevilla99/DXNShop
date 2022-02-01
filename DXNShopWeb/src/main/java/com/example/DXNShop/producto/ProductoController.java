@@ -38,7 +38,7 @@ public class ProductoController {
     @GetMapping(value="/mostrar")
     public String getProductos(Model model) {
         model.addAttribute("productoList", productoService.getProductos());
-        return "producto-list";
+        return "DXN-Shop-main/administrador/lista_productos";
     }
     
     @GetMapping("/agregar-producto")

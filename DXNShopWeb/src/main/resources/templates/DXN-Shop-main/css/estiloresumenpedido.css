@@ -1,0 +1,35 @@
+.fondo {
+    background-color: #ffefef;
+}
+.fondoBarra{
+    background-color: rgb(138, 1, 1);
+}
+
+
+h1,h2{
+    text-align:center;
+}
+
+  .columna1 {      
+    background: rgb(0, 0, 0);
+    color: rgb(255, 249, 249);
+    text-align: center;
+    font-weight: bold;
+}
+
+.columna2 {      
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
+}
+.columna3 {      
+    background: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
+    
+}
+
+#tablas{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

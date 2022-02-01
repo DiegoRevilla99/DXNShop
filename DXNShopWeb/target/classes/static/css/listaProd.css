@@ -1,0 +1,49 @@
+.fondo {
+    background-color: #ffefef;
+}
+
+.fondoBarra{
+    background-color: rgb(138, 1, 1);
+}
+
+
+
+#cabecera{
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+
+h5{
+    text-align: center;
+    font-weight: bold;
+}
+
+#bord{
+    background-color: #ffffff;
+    color: black;
+    border: black 1px solid;
+}
+
+label{
+    font-weight: bold;
+}
+
+#cabeza{
+    border: black 3px solid;
+    background-image: linear-gradient(to right, #000dbe 0%, #75b5ff 100%);
+}
+
+#iconoB{
+    align-items: center;
+    border: black 1px solid;
+    margin-top: 5px;
+}
+
+#iconoB2{
+    align-items: center;
+    border: black 1px solid;
+    margin: 2px;
+}

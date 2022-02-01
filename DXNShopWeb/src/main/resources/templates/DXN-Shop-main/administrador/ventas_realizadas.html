@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas realizadas</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/listaProd.css">
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.webp" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand" href="#">DXN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="informacion_actual.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ventas_realizadas.html">Ventas Realizadas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="alta_productos.html">Alta productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista_productos.html">Lista de productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista_pedidos.html">Lista de pedidos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container col-lg-11">
+        <br>
+        <div class="card bg-dark text-white">
+            <h2 class="card-header border-bottom border-white">Ventas</h2>
+
+            <div class="card-body">
+                <div class="d-flex col-xs-3 col-sm-7 col-md-6 col-lg-5  col-lx-6">
+                    <input class="form-control" type="search" placeholder="Búsqueda" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+                <br>
+                <div class="row" id="centrado">
+                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block "
+                        id="cabecera">ID</div>
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Cliente</div>
+                    <div class="col-12 col-sm-12 col-lg-2 col-xl-2 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Artículo</div>
+                    <div class="col-12 col-sm-12 col-lg-2 col-xl-2  d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Fecha</div>
+                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Hora</div>
+                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Precio U</div>
+                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Cantidad</div>
+                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
+                        id="cabecera">Total</div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1 " id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">ID: </p> 1
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 " id="bord">
+                        <p class="d-lg-none d-xl-none " id="cabecera">Cliente: </p>Mariana Rodriguez
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 " id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Artículo: </p> CAFÉ NEGRO LINGZHI
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Fecha: </p> 10/12/2021
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Hora: </p> 09:34:27
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Precio Unitario: </p> 270.0
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Cantidad: </p> 2
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
+                        <p class="d-lg-none d-xl-none" id="cabecera">Total: </p>540.0
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <footer>
+        <div class="card text-center fondoBarra">
+            <div class="card-header text-light">
+                Acerca de nosotros
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-light">DXN</h5>
+                <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
+                <img src="../img/logo.webp" alt="" width="100" height="70">
+            </div>
+            <div class="card-footer text-muted">
+                Copyright 2021 &copy
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/c799a26830.js" crossorigin="anonymous"></script>
+    <title>Resumen del pedido</title>
+    <link rel="stylesheet" href="../css/estiloresumenpedido.css">
+
+    <script>
+        function iniciar() {
+
+            document.informacion.addEventListener("invalid", validacion, true);
+            document.informacion.addEventListener("invalid", validar, true);
+            document.getElementById("enviar").addEventListener("click", enviar, false);
+            document.informacion.addEventListener("input", controlar, false);
+        }
+
+        function validacion(e) {
+            var elemento = e.target;/*target: devuelve el elemento que desencadenó el evento.*/
+            elemento.style.background = '#DDDDDD';
+        }
+        function enviar() {
+            var valido = document.informacion.checkValidity();/* comprueba si el elemento tiene restricciones y si las cumple. Si el elemento no cumple sus restricciones, el navegador lanza un evento*/
+            if (valido) {
+                document.informacion.submit();
+            }
+        }
+        function controlar(e) {
+            var elemento = e.target;
+            if (elemento.validity.valid) {
+                elemento.style.background = '#FFFFFF';
+            } else {
+                elemento.style.background = '#FFDDDD';
+            }
+        }
+
+        function validar() {
+            if (document.informacion.nombreSelect.
+                value == 0 ||
+                document.nombreFormulario.nombreSelect.
+                    value == "") {
+                alert("Selecciona Una opción");
+                document.nombreFormulario.nombreSelect.
+                    focus();
+            }
+        }
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.webp" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand" href="#">DXN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="true">
+                            Catálogo de productos
+                        </a>
+                        <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                            <li><a class=" dropdown-item text-light bg-dark" href="../catalogo/alimentos_bebidas.html">Alimentos y Bebidas</a></li>
+                            <li>
+                                <hr class="dropdown-divider bg-light">
+                            </li>
+                            <li><a class=" dropdown-item text-light bg-dark" href="../catalogo/suplementos.html">Suplementos Alimenticios</a></li>
+                            <li>
+                                <hr class="dropdown-divider bg-light">
+                            </li>
+                            <li><a class=" dropdown-item text-light bg-dark" href="../catalogo/cuidado_personal.html">Cuidado Personal</a></li>
+                            <li>
+                                <hr class="dropdown-divider bg-light">
+                            </li>
+                            <li><a class=" dropdown-item text-light bg-dark" href="#">Cuidado de la Piel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Acerca de Nosotros</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    <section class="fondo ">
+        <!--Agregar aqui su contenido-->
+        <section id="ventas" class="w-75 m-auto">
+
+            <div class="container col-lg-12 " id="tablas">
+                <div class="card bg-dark  mt-4 text-white  ">
+                    <h1 class="card-header border-bottom border-white ">RESUMEN DEL PEDIDO</h1>
+
+
+                    <div class="container  ">
+
+                        <div class="row my-2  mx-auto ">
+
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2  d-none d-md-block columna1"
+                                id="cabecera">ID</div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2  d-none d-md-block columna1"
+                                id="cabecera"> CANTIDAD</div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4  d-none d-md-block columna1"
+                                id="cabecera"> PRODUCTO</div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2  d-none d-md-block columna1"
+                                id="cabecera">PRECIO</div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2  d-none d-md-block columna1"
+                                id="cabecera">IMPORTE</div>
+
+
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 columna2 ">
+                                <p class="d-md-none d-lg-none d-xl-none columna3 " id="cabecera">ID: </p> 1
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">CANTIDAD: </p>
+                                1
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRODUCTO: </p>
+                                Lingzhi Coffee 3
+                                En 1
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRECIO: </p>
+                                $500
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">IMPORTE: </p>
+                                $500
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2 ">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">ID: </p> 2
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">CANTIDAD: </p>
+                                2
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRODUCTO: </p>
+                                DXN Vita Café
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRECIO: </p>
+                                $500
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">IMPORTE: </p>
+                                $1000
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">ID: </p> 3
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">CANTIDAD: </p>
+                                5
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRODUCTO: </p>
+                                DXN Lingzhi Coffee
+                                3 In 1 LITE
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">PRECIO: </p>
+                                $800
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 border columna2">
+                                <p class="d-md-none d-lg-none d-xl-none columna2 columna3" id="cabecera">IMPORTE: </p>
+                                $4000
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-box-open"></i> TOTAL PEDIDO</span>
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <BR>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-truck"></i> OTROS COSTOS</span>
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+
+                            <BR>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="far fa-money-bill-alt"></i> TOTAL A
+                                    PAGAR</span>
+                                <input type="text" class="form-control" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                            <br>
+
+
+                        </div>
+                        <div class="form-group text-center ">
+                            <button type="button" id="enviar" class="btn btn-danger">ATRAS</button>
+                            <button type="button" id="enviar" class="btn btn-success">CONTINUAR</button>
+                        </div>
+
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <footer>
+            <div class="card text-center fondoBarra">
+                <div class="card-header text-light">
+                    Acerca de nosotros
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-light">DXN</h5>
+                    <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
+                    <img src="../img/logo.webp" alt="" width="100" height="70">
+                </div>
+                <div class="card-footer text-muted">
+                    Copyright 2021 &copy
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

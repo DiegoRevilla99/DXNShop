@@ -1,0 +1,40 @@
+.fondo {
+    background-color: #ffefef;
+    
+  }
+  .fondoBarra{
+    background-color: rgb(138, 1, 1);
+  }
+  
+  
+  h1,h2{
+    text-align:center;
+  }
+  h5{
+    text-align:center;
+    display:block;
+    margin:auto;
+  }
+  .linea {
+    border-top: 1px solid rgb(253, 253, 253);
+    height: 2px;
+    padding: 0;
+    margin: 20px auto 0 auto;
+  }
+  .card-img-top{
+    width: 250px;
+    height: 300px;
+    display:block;
+    margin:auto;
+    
+  }
+  .centrar{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #identified{
+    
+    background: #ffffff;
+  }
+  

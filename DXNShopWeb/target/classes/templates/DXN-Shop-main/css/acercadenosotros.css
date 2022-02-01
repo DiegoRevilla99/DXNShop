@@ -1,0 +1,71 @@
+.fondo {
+    background-color: #ffefef;
+}
+h1,h2{
+    text-align:center;
+}
+.fondoBarra{
+    background-color: rgb(138, 1, 1);
+}
+.texto-justificado{
+    text-align: justify;
+    margin: 50px;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 20vw;
+        object-fit: cover;
+    }
+
+    
+    .nacc{
+        background:dark;
+        color: black;
+        
+    }
+   
+       
+      #identified{
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        box-shadow: 5px 5px 5px 5px rgba(63, 63, 62, 0.87);
+        background: #ffffff;
+      }
+      .list-group-item:hover {
+        background-color:#888383;  
+        color: white;  
+        
+      }
+
+      img.pequeña{
+        width: 150px;
+        height: 150px;
+       
+
+        background-repeat: no-repeat;
+        background-position: 50%;
+       
+        background-size: 100% auto;
+
+       
+		border-radius: 60%;
+		border: 2px solid #9b1003;
+      }
+       
+
+   #letras{
+     align-content: center;
+     text-align: center;
+     align-items: center;
+   }
+
+   
+
+   .card-img-top{
+    width: 250px;
+    height: 250px;
+    display:block;
+    margin:auto;
+   }
