@@ -4,9 +4,13 @@
  */
 package com.example.DXNShop.usuario;
 
+import com.example.DXNShop.tarjeta.Tarjeta;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -35,7 +39,14 @@ public class Usuario {
     @Column(name = "rol_id")
     private int rol_id;
 
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Tarjeta tarjeta;
+
     public Usuario() {
+    }
+
+    public Usuario(String email) {
+        this.email = email;
     }
 
     public Usuario(String email, String pass, String nombre, String apellidos, String telefono, int rol_id) {
