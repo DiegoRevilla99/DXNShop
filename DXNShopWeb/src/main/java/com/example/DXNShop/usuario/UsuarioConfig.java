@@ -18,8 +18,7 @@ public class UsuarioConfig {
     @Bean
     CommandLineRunner commandLineRunner1(UsuarioRepository repository) {
         return args -> {
-            Usuario usuario1 = new Usuario("alejandro@gmail.com", "Alejandro",1);
-            Usuario usuario2 = new Usuario("antonio@gmail.com", "Antonio", 1);
+            Usuario usuario1 = new Usuario("alejandro@gmail.com", "password","Alejandro", "Diaz", "9511789781",1);
             repository.save(usuario1);
         };
     };

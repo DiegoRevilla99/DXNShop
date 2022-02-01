@@ -49,8 +49,11 @@ public class UsuarioController {
     public void updateUsuario(
             @PathVariable("email") String email,
             @RequestParam(required = false) String pass,
+            @RequestParam(required = false) String nombre,
+            @RequestParam(required = false) String apellidos,
+            @RequestParam(required = false) String telefono,
             @RequestParam(required = false) int rol_id
     ) {
-        usuarioService.updateUsuario(email, pass, rol_id);
+        usuarioService.updateUsuario(email, pass, nombre, apellidos, telefono, rol_id);
     }
 }
