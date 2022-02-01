@@ -66,55 +66,60 @@
                     <button class="btn btn-primary" type="submit">Buscar</button>
                 </div>
                 <br>
-                <a class="btn btn-success" href="altaProductos.html">Nuevo producto <icon class="fas fa-plus">
+                <a class="btn btn-success" th:href="@{'agregar-producto/'}">Nuevo producto <icon class="fas fa-plus">
                     </icon>
                 </a>
                 <br><br>
-                <div class="row" id="centrado">
-                    <div class="col-12 col-sm-12 col-lg-2 col-xl-2 d-none d-xs-none d-sm-none d-md-none d-lg-block "
-                        id="cabecera">Producto</div>
-                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Descripción</div>
-                    <div class="col-12 col-sm-12 col-lg-2 col-xl-2 d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Cantidades</div>
-                    <div class="col-12 col-sm-12 col-lg-2 col-xl-2  d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Precio</div>
-                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Exist.</div>
-                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Editar</div>
-                    <div class="col-12 col-sm-12 col-lg-1 col-xl-1 d-none d-xs-none d-sm-none d-md-none d-lg-block"
-                        id="cabecera">Eliminar</div>
+               
+                
+                
+                <div class="row">
+                    <table id="productoList" class="table mt-12">
+                        <thead>
+                            <tr id="bord">
+                                <th col="2">Folio</th>
+                                <th col="2">Nombre</th>
+                                <th col="2">Descripción</th>
+                                <th col="2">Existencia</th>
+                                <th col="2">Imagen</th>
+                                <th col="2">Unidad medida</th>
+                                <th col="2">Precio venta</th>
+                                <th col="2">Precio compra</th>
+                                <th col="2">Editar</th>
+                                <th col="2">Eliminar</th>
+                            </tr>
+                        </thead>
 
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 " id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Producto: </p> CAFÉ NEGRO LINGZHI
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 " id="bord">
-                        <p class="d-lg-none d-xl-none " id="cabecera">Descripción: </p> Café Negro Lingzhi DXN no
-                        tiene
-                        azúcar o aditivos, pero logra mantener un fuerte sabor y rico aroma del café. Está
-                        perfectamente
-                        diseñado para la Sociedad moderna.
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 " id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Cantidades: </p> 20 sobres x 4.5g
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2" id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Precio: </p> 270.0
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Existencia: </p> 8
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1 " id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Editar: </p>
-                        <button type="button" class="btn btn-warning" id="iconoB"><i class="fas fa-edit"></i></button>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-1 col-xl-1" id="bord">
-                        <p class="d-lg-none d-xl-none" id="cabecera">Eliminar: </p>
-                        <button type="button" class="btn btn-danger" id="iconoB"><i
-                                class="fas fa-trash-alt"></i></button>
-                    </div>
-                </div>
+                        <tbody class="producto-list">
+                            <tr th:each="producto: ${productoList}">
+                                <td id="bord" th:text="${producto.folio}"></td>
+                                <td id="bord" th:text="${producto.nombreproducto}"></td>
+                                <td id="bord" th:text="${producto.descripcion}"></td>
+                                <td id="bord" th:text="${producto.existencia}"></td>
+                                <td id="bord" th:text="${producto.imagen}"></td>
+                                <td id="bord" th:text="${producto.unidad_medida}"></td>
+                                <td id="bord" th:text="${producto.precio_venta}"></td>
+                                <td id="bord" th:text="${producto.precio_compra}"></td>
+
+                                <td id="bord" data-label="Editar">
+                                    <a class="btn btn-warning" th:href="@{/producto/editarproducto/} + ${producto.folio}">Editar
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
+
+                                <td id="bord" data-label="Eliminar">
+                                    <a class="btn btn-danger" th:href="@{/producto/eliminar/} + ${producto.folio}">Eliminar
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+        </div>
+                
+                
             </div>
         </div>
     </section>

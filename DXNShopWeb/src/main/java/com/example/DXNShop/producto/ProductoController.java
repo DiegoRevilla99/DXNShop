@@ -44,7 +44,7 @@ public class ProductoController {
     @GetMapping("/agregar-producto")
     public String agregarProducto(Model model){
         model.addAttribute("producto", new Producto());
-        return "agregar-producto";
+        return "DXN-Shop-main/administrador/alta_productos";
     }
     
     @PostMapping("/agregar")
@@ -66,7 +66,7 @@ public class ProductoController {
     public String editarProducto(@PathVariable ("productoFolio") Long productoFolio, Model model){
         model.addAttribute("producto", productoService.getProducto(productoFolio));
         
-        return "editar-producto";
+        return "DXN-Shop-main/administrador/actualizar_productos";
     }
     
     @PostMapping(path= "/editarproducto")
