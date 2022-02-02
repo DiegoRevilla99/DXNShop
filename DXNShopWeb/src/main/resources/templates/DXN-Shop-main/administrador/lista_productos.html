@@ -85,6 +85,7 @@
                                 <th col="2">Unidad medida</th>
                                 <th col="2">Precio venta</th>
                                 <th col="2">Precio compra</th>
+                                <th col="2">Catálogo</th>
                                 <th col="2">Editar</th>
                                 <th col="2">Eliminar</th>
                             </tr>
@@ -100,6 +101,7 @@
                                 <td id="bord" th:text="${producto.unidad_medida}"></td>
                                 <td id="bord" th:text="${producto.precio_venta}"></td>
                                 <td id="bord" th:text="${producto.precio_compra}"></td>
+                                <td id="bord" th:text="${producto.catalogo.nombre}"></td>
 
                                 <td id="bord" data-label="Editar">
                                     <a class="btn btn-warning" th:href="@{/producto/editarproducto/} + ${producto.folio}">Editar

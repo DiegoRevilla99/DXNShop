@@ -4,6 +4,8 @@
  */
 package com.example.DXNShop.producto;
 
+import com.example.DXNShop.catalogo.Catalogo;
+import static java.lang.System.console;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -61,8 +63,10 @@ public class ProductoService {
             String imagen,
             String unidad_medida, 
             double precio_venta, 
-            double precio_compra) {
+            double precio_compra,
+            Catalogo catalogo) {
         
+        System.out.println(folio + "  ##########################################################################################################");
         Producto producto = productoRepository.findByFolio(folio).
                 orElseThrow(() -> new IllegalStateException(
                 "El producto con el folio " + folio + " no existe..."
