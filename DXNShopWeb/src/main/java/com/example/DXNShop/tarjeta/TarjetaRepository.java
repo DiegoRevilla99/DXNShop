@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.example.DXNShop.cliente;
+package com.example.DXNShop.tarjeta;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,7 +14,8 @@ import org.springframework.stereotype.Repository;
  * @author aleja
  */
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, String>{
-        @Query("Select s from Cliente s where s.email =?1")
-    Optional<Cliente> findClienteByEmail(String email);
+public interface TarjetaRepository extends JpaRepository<Tarjeta, String>{
+    //Consular si ya existe una tarjeta
+    @Query("Select s from Tarjeta s where s.numero =?1")
+    Optional<Tarjeta> findByNumero(String tarjeta);
 }
