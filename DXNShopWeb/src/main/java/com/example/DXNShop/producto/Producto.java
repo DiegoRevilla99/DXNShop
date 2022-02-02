@@ -38,7 +38,7 @@ public class Producto {
     private double precio_venta;
     private double precio_compra;
     
-
+ 
     public Producto() {
     }
 

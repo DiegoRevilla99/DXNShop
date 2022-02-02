@@ -4,14 +4,19 @@
  */
 package com.example.DXNShop.usuario;
 
+import com.example.DXNShop.carrito.Carrito;
 import com.example.DXNShop.tarjeta.Tarjeta;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 /**
  *
@@ -41,6 +46,9 @@ public class Usuario {
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Tarjeta tarjeta;
+
+    @OneToMany(mappedBy = "usuario")
+    private Set<Carrito> carrito = new HashSet<>();
 
     public Usuario() {
     }
@@ -112,6 +120,6 @@ public class Usuario {
                 + "nombre=" + nombre
                 + "apellidos=" + apellidos
                 + "telefono=" + telefono
-                + "rol=" + rol_id + "]";
+                + "rol=" + rol_id + "}";
     }
 }
