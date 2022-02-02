@@ -4,6 +4,7 @@
  */
 package com.example.DXNShop.producto;
 
+import com.example.DXNShop.catalogo.Catalogo;
 import java.util.List;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *
- * @author aleja
+ * @author xeng_
  */
 @Configuration
 public class ProductoConfig {
@@ -19,9 +20,9 @@ public class ProductoConfig {
     @Bean
     CommandLineRunner commandLineRunner3(ProductoRepository repository) {
         return args -> {
-            Producto producto1 = new Producto("PAPAS", "Papas sabritas", 10, "No image", "Kilos", 100, 50);
-            Producto producto2 = new Producto("REFRESCO", "Refresco", 10, "No image", "Kilos", 100, 50);
-            repository.saveAll(List.of(producto1, producto2));
+//            Producto producto1 = new Producto("PAPAS", "Papas sabritas", 10, "No image", "Kilos", 100, 50);
+//            Producto producto2 = new Producto("REFRESCO", "Refresco", 10, "No image", "Kilos", 100, 50);
+//            repository.saveAll(List.of(producto1, producto2));
         };
     };
 }

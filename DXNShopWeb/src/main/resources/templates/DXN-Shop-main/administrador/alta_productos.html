@@ -233,7 +233,15 @@
                        name="precio_compra" required>
                 <div class="valid-feedback"></div>
                 <div class="invalid-feedback" th:errors="*{precio_compra}">Campo obligatorio</div>
-            </div><!-- comment -->
+            </div>
+            
+            <div class="form-group">
+                <label for="catalogo">Inserta a que catálogo pertenece</label>
+                <input type="text" field="*{catalogo}" class="form-control" id="catalogo"´placeholder="Inserta el catálogo"
+                       name="catalogo" required>
+                <div class="valid-feedback"></div>
+                <div class="invalid-feedback" th:errors="*{catalogo}">Campo obligatorio</div>
+            </div>
             
             
             <button id="registerNewProducto" type="submit" class="btn btn-success mt-3">Registrar</button>

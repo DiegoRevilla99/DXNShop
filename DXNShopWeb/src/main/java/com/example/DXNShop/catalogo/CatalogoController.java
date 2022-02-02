@@ -2,8 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.DXNShop.producto;
-
+package com.example.DXNShop.catalogo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,37 +18,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 /**
  *
- * @author aleja
+ * @author xeng_
  */
 @Controller
-@RequestMapping(path = "/producto")
-public class ProductoController {
-
-    private final ProductoService productoService;
+@RequestMapping(path = "/catalogo")
+public class CatalogoController {
+    
+    private final CatalogoService catalogoService;
     
     @Autowired
-    public ProductoController(ProductoService productoService) {
-        this.productoService = productoService;
+    public CatalogoController(CatalogoService catalogoService) {
+        this.catalogoService = catalogoService;
     }
     
     @GetMapping(value="/mostrar")
-    public String getProductos(Model model) {
-        model.addAttribute("productoList", productoService.getProductos());
+    public String getCatalogo(Model model) {
+        model.addAttribute("catalogoList", catalogoService.getCatalogos());
         return "DXN-Shop-main/administrador/lista_productos";
     }
     
-    @GetMapping("/agregar-producto")
-    public String agregarProducto(Model model){
-        model.addAttribute("producto", new Producto());
+    @GetMapping(value="/mostrarProductos/{catalogoId}")
+    public String getCatalogoProductos(@PathVariable ("catalogoId") Long catalogoId, Model model) {
+        //model.addAttribute("catalogoProductosList", catalogoService.getCatalogoProductos());
+        Catalogo cat = catalogoService.getCatalogo(catalogoId);
+        System.out.println(cat.getNombre() + " - " + cat.getProductoList() + "        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        model.addAttribute("productosCatalogo", cat.getProductoList());
+        return "DXN-Shop-main/catalogo/alimentos_bebidas";
+    }
+    
+    @GetMapping("/agregar-catalogo")
+    public String agregarCatalogo(Model model){
+        model.addAttribute("producto", new Catalogo());
         return "DXN-Shop-main/administrador/alta_productos";
     }
     
     @PostMapping("/agregar")
-    public String registerNewProducto(@ModelAttribute Producto producto, RedirectAttributes redirectAttrs) {
-        productoService.addNewProducto(producto);
+    public String registerNewCatalogo(@ModelAttribute Catalogo catalogo, RedirectAttributes redirectAttrs) {
+        catalogoService.addNewCatalogo(catalogo);
         redirectAttrs
                 .addFlashAttribute("mensaje", "Agregado correctamente")
                 .addFlashAttribute("clase", "success");
@@ -57,26 +64,21 @@ public class ProductoController {
     }
     
     @GetMapping("/eliminar/{productoFolio}")
-    public String deleteProducto(@PathVariable("productoFolio")Long productoFolio){
-        productoService.deleteProducto(productoFolio);
+    public String deleteCatalogo(@PathVariable("catalogoId")Long catalogoId){
+        catalogoService.deleteCatalogo(catalogoId);
         return "redirect:/producto/mostrar";
     }
     
     @GetMapping(path = "/editarproducto/{productoFolio}")
-    public String editarProducto(@PathVariable ("productoFolio") Long productoFolio, Model model){
-        model.addAttribute("producto", productoService.getProducto(productoFolio));
-        System.out.println(productoFolio + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    public String editarCatalogo(@PathVariable ("catalogoId") Long catalogoId, Model model){
+        model.addAttribute("producto", catalogoService.getCatalogo(catalogoId));
+        
         return "DXN-Shop-main/administrador/actualizar_productos";
     }
     
     @PostMapping(path= "/editarproducto")
-    public String updateProducto(@ModelAttribute Producto producto){
-        System.out.println(producto.getFolio() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println(producto.getNombreproducto() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        productoService.updateProducto(producto.getFolio(), producto.getNombreproducto(),producto.getDescripcion(),
-                producto.getExistencia(), producto.getImagen(),producto.getUnidad_medida(), producto.getPrecio_venta(), producto.getPrecio_compra(),
-                producto.getCatalogo());
+    public String updateCatalogo(@ModelAttribute Catalogo catalogo){
+        catalogoService.updateCatalogo(catalogo.getId(), catalogo.getNombre(),catalogo.getDescripcion());
         return "redirect:/producto/mostrar";
     }
-
 }

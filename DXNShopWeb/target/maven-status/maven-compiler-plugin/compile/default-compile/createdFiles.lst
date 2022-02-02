@@ -1,6 +1,15 @@
+<<<<<<< HEAD
+com\example\DXNShop\cliente\ClienteConfig.class
+com\example\DXNShop\cliente\ClienteRepository.class
+com\example\DXNShop\cliente\ClienteService.class
+com\example\DXNShop\DxnShopApplication.class
+com\example\DXNShop\cliente\Cliente.class
+com\example\DXNShop\cliente\ClienteController.class
+=======
 com\example\DXNShop\usuario\UsuarioController.class
 com\example\DXNShop\usuario\Usuario.class
 com\example\DXNShop\DxnShopApplication.class
 com\example\DXNShop\usuario\UsuarioService.class
 com\example\DXNShop\usuario\UsuarioConfig.class
 com\example\DXNShop\usuario\UsuarioRepository.class
+>>>>>>> 6f8846ca685131ccb2b3ceb8c34c1dcfd0b5be70
