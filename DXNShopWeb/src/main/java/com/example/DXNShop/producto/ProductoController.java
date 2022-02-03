@@ -35,7 +35,12 @@ public class ProductoController {
         this.productoService = productoService;
     }
     
-    @GetMapping(value="/mostrar")
+    @GetMapping("/informacion_actual")
+    public String inicio(){
+        return "DXN-Shop-main/administrador/informacion_actual";
+    } 
+    
+    @GetMapping("/mostrar")
     public String getProductos(Model model) {
         model.addAttribute("productoList", productoService.getProductos());
         return "DXN-Shop-main/administrador/lista_productos";
@@ -56,27 +61,42 @@ public class ProductoController {
         return "redirect:/producto/mostrar";
     }
     
+    @GetMapping(path = "/editarproducto/{productoFolio}")
+    public String editarProducto(@PathVariable ("productoFolio") Long productoFolio, Model model){
+        model.addAttribute("producto", productoService.getProducto(productoFolio));
+        //System.out.println(productoFolio + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        return "DXN-Shop-main/administrador/actualizar_productos";
+    }
+    
+    @PostMapping(path= "/editarproducto")
+    public String updateProducto(@ModelAttribute Producto producto){
+        //System.out.println(producto.getFolio() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        //System.out.println(producto.getNombreproducto() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        productoService.updateProducto(producto.getFolio(), producto.getNombreproducto(),producto.getDescripcion(),
+                producto.getExistencia(), producto.getImagen(),producto.getUnidad_medida(), producto.getPrecio_venta(), producto.getPrecio_compra(),
+                producto.getCatalogo());
+        return "redirect:/producto/mostrar";
+    }
+    
     @GetMapping("/eliminar/{productoFolio}")
     public String deleteProducto(@PathVariable("productoFolio")Long productoFolio){
         productoService.deleteProducto(productoFolio);
         return "redirect:/producto/mostrar";
     }
     
-    @GetMapping(path = "/editarproducto/{productoFolio}")
-    public String editarProducto(@PathVariable ("productoFolio") Long productoFolio, Model model){
-        model.addAttribute("producto", productoService.getProducto(productoFolio));
-        System.out.println(productoFolio + "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        return "DXN-Shop-main/administrador/actualizar_productos";
+    @PostMapping
+    public void registerNewProducto(@RequestBody Producto producto) {
+        productoService.addNewProducto(producto);
     }
+
+    /*@DeleteMapping(path = "{productoFolio}")
+    public void deleteProducto(@PathVariable("productoFolio") Long productoFolio) {
+        productoService.deleteProducto(productoFolio);
+    }*/
+  
     
-    @PostMapping(path= "/editarproducto")
-    public String updateProducto(@ModelAttribute Producto producto){
-        System.out.println(producto.getFolio() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        System.out.println(producto.getNombreproducto() + "  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-        productoService.updateProducto(producto.getFolio(), producto.getNombreproducto(),producto.getDescripcion(),
-                producto.getExistencia(), producto.getImagen(),producto.getUnidad_medida(), producto.getPrecio_venta(), producto.getPrecio_compra(),
-                producto.getCatalogo());
-        return "redirect:/producto/mostrar";
-    }
+    
+    
+    
 
 }

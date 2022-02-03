@@ -2,7 +2,7 @@
      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"></htm>
 <html lang="es">
     <head>
-        <title>Usuarios</title>
+        <title>Tarjetas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,36 +15,36 @@
                 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script><!-- comment -->
 
-        <link rel="stylesheet" th:href="@{/css/pag.css}">
-            <script>
-        function iniciar() {
-            document.formulario_reg.addEventListener("invalid", validacion, true);
-            document.getElementById("reg").addEventListener("click", enviar, false);
-            document.formulario_reg.addEventListener("input", controlar, false);
-        }
-
-        function validacion(e) {
-            var elemento = e.target; //Referencia al objeto que ha  generado el evento
-            elemento.style.background = '#FFDDDD';
-        }
-
-        function enviar() {
-            var valido = document.formulario_reg.checkValidity();
-            if (valido) {
-                document.formulario_reg.submit();
+        <link rel="stylesheet" th:href='@{/css/altaProd.css}'>
+        <script>
+            function iniciar() {
+                document.formulario_reg.addEventListener("invalid", validacion, true);
+                document.getElementById("reg").addEventListener("click", enviar, false);
+                document.formulario_reg.addEventListener("input", controlar, false);
             }
-        }
 
-        function controlar(e) {
-            var elemento = e.target;
-            if (elemento.validity.valid) {
-                elemento.style.background = '#FFFFFF';
-            } else {
-                elemento.style.background = '#DDDDDD';
+            function validacion(e) {
+                var elemento = e.target; //Referencia al objeto que ha  generado el evento
+                elemento.style.background = '#FFDDDD';
             }
-        }
-        window.addEventListener("load", iniciar, false);
-    </script>
+
+            function enviar() {
+                var valido = document.formulario_reg.checkValidity();
+                if (valido) {
+                    document.formulario_reg.submit();
+                }
+            }
+
+            function controlar(e) {
+                var elemento = e.target;
+                if (elemento.validity.valid) {
+                    elemento.style.background = '#FFFFFF';
+                } else {
+                    elemento.style.background = '#DDDDDD';
+                }
+            }
+            window.addEventListener("load", iniciar, false);
+        </script>
     </head>
     <body>
         <header class="header">
@@ -62,13 +62,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Home</a>
+                                <a class="nav-link active" aria-current="page" th:href="@{'/usuario/perfil'}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" th:href="@{'/usuario/login'}">Iniciar sesión</a>
+                                <a class="nav-link" th:href="@{'/tarjeta/agregar-tarjeta'}">Añadir tarjeta</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" th:href="@{'/usuario/registro'}">Registrarse</a>
+                                <a class="nav-link" th:href="@{'/tarjeta/mostrar_tarjetas'}">Mi tarjeta</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
@@ -76,23 +76,23 @@
                                     Catálogo de productos
                                 </a>
                                 <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
-                                    <li><a class=" dropdown-item text-light bg-dark" href="catalogo/alimentos_bebidas.html">Alimentos y Bebidas</a></li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/1'}">Alimentos y Bebidas</a></li>
                                     <li>
                                         <hr class="dropdown-divider bg-light">
                                     </li>
-                                    <li><a class=" dropdown-item text-light bg-dark" href="catalogo/suplementos.html">Suplementos Alimenticios</a></li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/2'}">Suplementos Alimenticios</a></li>
                                     <li>
                                         <hr class="dropdown-divider bg-light">
                                     </li>
-                                    <li><a class=" dropdown-item text-light bg-dark" href="catalogo/cuidado_personal.html">Cuidado Personal</a></li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/3'}">Cuidado Personal</a></li>
                                     <li>
                                         <hr class="dropdown-divider bg-light">
                                     </li>
-                                    <li><a class=" dropdown-item text-light bg-dark" href="#">Cuidado de la Piel</a></li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/4'}">Cuidado de la Piel</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="Acerca_nosotros.html" tabindex="-1" aria-disabled="true">Acerca de Nosotros</a>
+                                <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Cerrar sesión</a>
                             </li>
                         </ul>
                     </div>
@@ -105,65 +105,62 @@
             <!--Agregar aqui su contenido-->
             <div class="container">
                 <section id="HistorialDevoluciones" class="container w-100">
-                    <p class="h1 pt-4 text-center">Registro - Nuevo usuario</p>
+                    <p class="h1 pt-4 text-center">Medio de Pago</p>
                     <br>
                     <div class="row justify-content-center">
-                        <div class="card text-white bg-dark mb-3 " style="max-width: 55rem;">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 55rem;">
                             <div class="card-header border-bottom border-light">
-                                <h3 class="text-center">REGISTRO DE DATOS</h3>
+                                <h3 class="text-center">EDITAR TARJETA</h3>
                             </div>
-                            <div class="card-body ">
-                                <form class="was-validated" id="formulario" th:object="${usuario}" th:action="@{/usuario/agregar/}" method="post">
+                            <div class="card-body">
+                                <form class="was-validated" id="formulario" th:object="${tarjeta}" th:action="@{/tarjeta/editartarjeta/}" method="post">
                                     <div class="row">
-                                        <div class="col-lg-6 justify-content-center">
+                                        <div class="col-lg-5">
                                             <div class="mb-3">
-                                                <label class="form-label" for="usuario">Nombre del cliente</label>
-                                                <input type="text" field="*{nombre}" class="form-control" id="nombre" placeholder="Encriba su nombre"
-                                                       name="nombre" required><!-- comment -->
+                                                <label class="form-label" for="usuario">Numero de tarjeta</label>
+                                                <input type="text" th:field="*{numero}" class="form-control" id="numero" placeholder="1234 1234 1234 1234"
+                                                       name="numero" required><!-- comment -->
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{nombre}">Campo obligatorio</div>
+                                                <div class="invalid-feedback" th:errors="*{numero}">Campo obligatorio</div>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label" for="apellidos">Apellidos</label>
-                                                <input type="text" field="*{apellidos}" class="form-control" id="apellidos" placeholder="Escribe sus apellidos"
-                                                       name="apellidos" required>
+                                                <label class="form-label" for="apellidos">CVV</label>
+                                                <input type="text" th:field="*{cvv}" class="form-control" id="cvv" placeholder="Escribe tu CVV"
+                                                       name="cvv" required>
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{apellidos}">Campo obligatorio</div>
+                                                <div class="invalid-feedback" th:errors="*{cvv}">Campo obligatorio</div>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label" for="telefono">No. Telefónico</label>
-                                                <input type="text" field="*{telefono}" class="form-control" id="telefono" placeholder="Escribe su telefono"
-                                                       name="telefono" required>
+                                                <label class="form-label" for="telefono">Vencimiento</label>
+                                                <input type="text" th:field="*{vencimiento}" class="form-control" id="vencimiento" placeholder="02/30"
+                                                       name="vencimiento" required>
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{telefono}">Campo obligatorio</div>
+                                                <div class="invalid-feedback" th:errors="*{vencimiento}">Campo obligatorio</div>
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-5">
                                             <div class="mb-3">                                                
-                                                <label class="form-label" for="email">Correo Electrónico</label>
-                                                <input type="text" field="*{email}" class="form-control" id="email" placeholder="Escribe su email"
-                                                       name="email" required>
+                                                <label class="form-label" for="email">Banco</label>
+                                                <input type="text" th:field="*{banco}" class="form-control" id="banco" placeholder="Escribe el nombre de tu banco"
+                                                       name="banco" required>
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{email}">Campo obligatorio</div>
+                                                <div class="invalid-feedback" th:errors="*{banco}">Campo obligatorio</div>
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" for="pass">Contraseña</label>
-                                                <input type="password" field="*{pass}" class="form-control" id="pass" placeholder="Escribe la contraseña"
-                                                       name="pass" required>
+                                            <div class="mb-3">                                                
+                                                <label class="form-label" for="email">Correo: </label>
+                                                <input type="text" th:field="*{usuario.email}" class="form-control" id="usuario" placeholder="Escribe tu correo electrónico"
+                                                       name="usuario" required>
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{pass}">Campo obligatorio</div>
+                                                <div class="invalid-feedback" th:errors="*{usuario}">Campo obligatorio</div>
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3" style="text-align: center">
                                                 <br>
-                                                <button  id="registerNewUsuario" type="submit" class="btn btn-primary">Guardar</button>
-                                                <input type="text hidden"field="*{rol_id}" value="1" style="display: none" class="form-control" id="rol_id"´placeholder="Escribe rol_id del cliente"
-                                                       name="rol_id" required>
+                                                <button  id="registerNewTarjeta" type="submit" class="btn btn-primary">Actualizar</button>
                                                 <div class="valid-feedback"></div>
-                                                <div class="invalid-feedback" th:errors="*{rol_id}">Campo obligatorio</div>
                                             </div>
-                                            <br><br>
+                                            <br>
                                         </div>            
                                     </div>
                                 </form>

@@ -66,7 +66,7 @@ public class ProductoService {
             double precio_compra,
             Catalogo catalogo) {
         
-        System.out.println(folio + "  ##########################################################################################################");
+        //System.out.println(folio + "  ##########################################################################################################");
         Producto producto = productoRepository.findByFolio(folio).
                 orElseThrow(() -> new IllegalStateException(
                 "El producto con el folio " + folio + " no existe..."

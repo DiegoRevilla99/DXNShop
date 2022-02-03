@@ -37,20 +37,41 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="informacion_actual.html">Home</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{'/producto/informacion_actual'}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ventas_realizadas.html">Ventas Realizadas</a>
+                        <a class="nav-link" th:href="@{'/producto/agregar-producto'}">Alta productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="alta_productos.html">Alta productos</a>
+                        <a class="nav-link" th:href="@{'/producto/mostrar'}">Lista de productos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lista_productos.html">Lista de productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lista_pedidos.html">Lista de pedidos</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
+                               data-bs-toggle="dropdown" aria-expanded="true">
+                                Catálogo de productos
+                            </a>
+                            <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/1'}">Alimentos y Bebidas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/2'}">Suplementos Alimenticios</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/3'}">Cuidado Personal</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/4'}">Cuidado de la Piel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/usuario/mostrar'}">Lista de clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Cerrar sesión</a>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -59,7 +80,7 @@
     <section class="container">
         <br>
         <div class="card bg-dark text-white">
-            <h2 class="card-header border-bottom border-white">Lista de productos</h2>
+            <h2 class="card-header border-bottom border-white text-center">LISTA DE PRODUCTOS</h2>
             <div class="card-body ">
                 <div class="d-flex col-xs-3 col-sm-7 col-md-6 col-lg-5  col-lx-6">
                     <input class="form-control" type="search" placeholder="Búsqueda" aria-label="Search">

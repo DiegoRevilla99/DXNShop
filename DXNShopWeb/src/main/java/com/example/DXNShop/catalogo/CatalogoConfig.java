@@ -20,7 +20,9 @@ public class CatalogoConfig {
         return args -> {
             Catalogo categoria1 = new Catalogo("Alimentos y bebidas", "Alimentos y bebidas naturales");
             Catalogo categoria2 = new Catalogo("Suplementos", "Suplementos alimenticios naturales");
-            repository.saveAll(List.of(categoria1, categoria2));
+            Catalogo categoria3 = new Catalogo("Cuidado personal", "Cuidado personal naturales");
+            Catalogo categoria4 = new Catalogo("Cuidado de la piel", "Cuidado de la piel naturales");
+            //repository.saveAll(List.of(categoria1, categoria2));
         };
     };
     

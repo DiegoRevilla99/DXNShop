@@ -26,6 +26,11 @@ public class TarjetaService {
         return tarjetaRepository.findAll();
     }
 
+    public Tarjeta getTarjeta(String numeroTarjeta) {
+        return tarjetaRepository.findByNumero(numeroTarjeta).orElse(null);
+
+    }
+
     public void addNewTarjeta(Tarjeta tarjeta) {
         Optional<Tarjeta> tarjetaOptional = tarjetaRepository
                 .findByNumero(tarjeta.getNumero());
@@ -35,13 +40,14 @@ public class TarjetaService {
         tarjetaRepository.save(tarjeta);
     }
 
-    public void deleteTarjeta(String numero) {
-        boolean exist = tarjetaRepository.existsById(numero);
+    public void deleteTarjeta(String numero_tarjeta) {
+        boolean exist = tarjetaRepository.existsById(numero_tarjeta);
         if (!exist) {
             throw new IllegalStateException(
-                    "La tarjeta asociada al número: " + numero + " no existe..."
+                    "La tarjeta con el numero: " + numero_tarjeta + " no existe..."
             );
         }
+        tarjetaRepository.deleteById(numero_tarjeta);
     }
 
     @Transactional
