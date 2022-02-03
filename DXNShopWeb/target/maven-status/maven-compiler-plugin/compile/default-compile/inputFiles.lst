@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\DxnShopApplication.java
 C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoController.java
 C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoConfig.java
@@ -26,6 +27,8 @@ C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\
 C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoRepository.java
 C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\Carrito.java
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\Tarjeta.java
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoService.java
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioConfig.java
@@ -52,4 +55,7 @@ C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoController.java
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoService.java
 C:\Users\JOSELYNE\Desktop\Ediciones\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoRepository.java
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

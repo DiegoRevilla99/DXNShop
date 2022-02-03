@@ -2,6 +2,7 @@
 Test set: com.example.DXNShop.DxnShopApplicationTests
 -------------------------------------------------------------------------------
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 26.944 s <<< FAILURE! - in com.example.DXNShop.DxnShopApplicationTests
 contextLoads  Time elapsed: 0.003 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
@@ -10,11 +11,16 @@ Caused by: org.springframework.dao.InvalidDataAccessApiUsageException: org.hiber
 Caused by: java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.example.DXNShop.carrito.Carrito.usuario -> com.example.DXNShop.usuario.Usuario
 Caused by: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.example.DXNShop.carrito.Carrito.usuario -> com.example.DXNShop.usuario.Usuario
 =======
+=======
+>>>>>>> Stashed changes
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 81.164 s <<< FAILURE! - in com.example.DXNShop.DxnShopApplicationTests
 contextLoads  Time elapsed: 0.005 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
 Caused by: org.springframework.orm.jpa.JpaObjectRetrievalFailureException: Unable to find com.example.DXNShop.usuario.Usuario with id alejandro@gmail.com; nested exception is javax.persistence.EntityNotFoundException: Unable to find com.example.DXNShop.usuario.Usuario with id alejandro@gmail.com
 Caused by: javax.persistence.EntityNotFoundException: Unable to find com.example.DXNShop.usuario.Usuario with id alejandro@gmail.com
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
