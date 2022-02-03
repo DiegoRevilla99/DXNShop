@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,12 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href='css/login.css'>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
     <!-- iconos -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
     <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     
-    <script >
+    <script>
         function iniciar(){
             campo1=document.getElementById("email");
             campo2=document.getElementById("password");
@@ -39,12 +40,21 @@
             }
         }
         function enviar() {
-            var valido = document.informacion.checkValidity();
-            if (valido) {
-                document.informacion.submit();
+            var email = document.getElementById("email").value;
+            if (email.startsWith('admin')){
+                console.log("Es un correo administrativo ");
+                location.replace("/producto/informacion_actual");
+            }
+            if(email.startsWith('yose')){
+                console.log("No correo administrativo ");
+                location.replace(href=/usuario/index);
             }
         }
         
+        function entrar(){
+            var email = document.getElementById("email").value;
+            console.log(email);
+        }
         window.addEventListener("load", iniciar, false);
     </script>
 </head>
@@ -62,23 +72,23 @@
                 </div>
                 <div class="form-group mx-sm-6" id="contraseña">
                     <i class="fa fa-lock icono"></i> Ingrese su contraseña
-                    <input pattern="[a-zA-Z0-9_.-]{5,}" type="password" name="pass" id="password" class="form-control Input"
+                    <input type="password" name="pass" id="password" class="form-control Input"
                         placeholder="Contraseña" minlength="5" maxlength="15" required><br><br>
                 </div>
                 <div class="form-group mx-sm-5">
-                    <button type="submit" class="btn btn-blue btn-lg  ingresar" id="enviar" ><i
+                    <button type="submit" class="btn btn-blue btn-lg ingresar" id="enviar" onclick="entrar()"><i
                             class="fas fa-sign-in-alt"></i>  Ingresar</button>
                 </div>
                 <div>
                     <a class="reset" href="perfil/restablecer_pass.html" id="lin">Olvidé mi contraseña</a>
                 </div>
                 <div>
-                    <a class="reg" href="index.html" id="lin">Regresar</a>
+                    <a class="reg" href="index.html" th:href="@{'/usuario/index'}" id="lin">Regresar</a>
                 </div>
             </form>
         </div>
         <div class="image-container d-none d-md-block" >
-            <img src="img/logo.webp" alt="">
+            <img  th:src="@{/img/logo.webp}"  alt="">
         </div>
     </div>
 

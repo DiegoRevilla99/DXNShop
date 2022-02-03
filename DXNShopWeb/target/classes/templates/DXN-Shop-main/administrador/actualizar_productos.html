@@ -3,270 +3,237 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta de productos</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar productos</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
         <link rel="stylesheet" th:href='@{/css/altaProd.css}'>
-    <!-- iconos -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <!-- iconos -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+        <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 
-    <script>
-        function iniciar() {
-            campo1 = document.getElementById("nombre");
-            campo2 = document.getElementById("descripcion");
-            campo3 = document.getElementById("cantidades");
-            campo4 = document.getElementById("precio");
-            campo5 = document.getElementById("existencia");
-            campo1.addEventListener("input", validacion1);
-            campo2.addEventListener("input", validacion1);
-            campo3.addEventListener("input", validacion1);
-            campo4.addEventListener("input", validacion1);
-            campo5.addEventListener("input", validacion1);
-            document.getElementById("enviar").addEventListener("click", enviar, false);
-        }
+        <script>
+            function iniciar() {
+                campo1 = document.getElementById("nombre");
+                campo2 = document.getElementById("descripcion");
+                campo3 = document.getElementById("cantidades");
+                campo4 = document.getElementById("precio");
+                campo5 = document.getElementById("existencia");
+                campo1.addEventListener("input", validacion1);
+                campo2.addEventListener("input", validacion1);
+                campo3.addEventListener("input", validacion1);
+                campo4.addEventListener("input", validacion1);
+                campo5.addEventListener("input", validacion1);
+                document.getElementById("enviar").addEventListener("click", enviar, false);
+            }
 
 
-        function validacion1() {
-            if (campo1.value == '') {
-                campo1.style.background = '#FFDDDD';
-            } else {
-                campo1.style.background = '#D7F1FA';
+            function validacion1() {
+                if (campo1.value == '') {
+                    campo1.style.background = '#FFDDDD';
+                } else {
+                    campo1.style.background = '#D7F1FA';
+                }
+                if (campo2.value == '') {
+                    campo2.style.background = '#FFDDDD';
+                } else {
+                    campo2.style.background = '#D7F1FA';
+                }
+                if (campo3.value == '') {
+                    campo3.style.background = '#FFDDDD';
+                } else {
+                    campo3.style.background = '#D7F1FA';
+                }
+                if (campo4.value == '') {
+                    campo4.style.background = '#FFDDDD';
+                } else {
+                    campo4.style.background = '#D7F1FA';
+                }
+                if (campo5.value == '') {
+                    campo5.style.background = '#FFDDDD';
+                } else {
+                    campo5.style.background = '#D7F1FA';
+                }
             }
-            if (campo2.value == '') {
-                campo2.style.background = '#FFDDDD';
-            } else {
-                campo2.style.background = '#D7F1FA';
+            function enviar() {
+                var valido = document.informacion.checkValidity();
+                if (valido) {
+                    document.informacion.submit();
+                }
             }
-            if (campo3.value == '') {
-                campo3.style.background = '#FFDDDD';
-            } else {
-                campo3.style.background = '#D7F1FA';
-            }
-            if (campo4.value == '') {
-                campo4.style.background = '#FFDDDD';
-            } else {
-                campo4.style.background = '#D7F1FA';
-            }
-            if (campo5.value == '') {
-                campo5.style.background = '#FFDDDD';
-            } else {
-                campo5.style.background = '#D7F1FA';
-            }
-        }
-        function enviar() {
-            var valido = document.informacion.checkValidity();
-            if (valido) {
-                document.informacion.submit();
-            }
-        }
 
-        window.addEventListener("load", iniciar, false);
-    </script>
-</head>
+            window.addEventListener("load", iniciar, false);
+        </script>
+    </head>
 
-<body class="fondo">
-    <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img th:src="@{/img/logo.webp}" alt="" width="50" height="40">
-            </a>
-            <a class="navbar-brand" href="#">DXN</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="informacion_actual.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ventas_realizadas.html">Ventas Realizadas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alta_productos.html">Alta productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lista_productos.html">Lista de productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lista_pedidos.html">Lista de pedidos</a>
-                    </li>
-                </ul>
+    <body class="fondo">
+        <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img th:src="@{/img/logo.webp}" alt="" width="50" height="40">
+                </a>
+                <a class="navbar-brand" href="#">DXN</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/producto/informacion_actual'}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/producto/agregar-producto'}">Alta productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/producto/mostrar'}">Lista de productos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
+                               data-bs-toggle="dropdown" aria-expanded="true">
+                                Catálogo de productos
+                            </a>
+                            <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/1'}">Alimentos y Bebidas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/2'}">Suplementos Alimenticios</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/3'}">Cuidado Personal</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/4'}">Cuidado de la Piel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/usuario/mostrar'}">Lista de clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <section class="container w-100">
+        <section class="container w-100">
+            <br>
+            <div class="card bg-dark text-white">
+                <h2 class="card-header border-bottom border-white text-center">EDITAR PRODUCTO</h2>
+
+                <div class="card-body">
+
+                    <form class="was-validated" id="formulario" th:object="${producto}" th:action="@{/producto/editarproducto/}" method="post">
+                        <div class="row">
+                            <div class="col-lg-6 justify-content-center">
+                                <input type="hidden" th:field="*{folio}">
+                                <div class="form-group">
+
+                                    <label for="producto">Nombre del producto</label>
+                                    <input type="text" th:field="*{nombreproducto}" class="form-control" id="nombreproducto" placeholder="Encriba el nombre del producto"
+                                           name="nombreproducto" required><!-- comment -->
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{nombreproducto}">Campo obligatorio</div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción</label>
+                                    <input type="text" th:field="*{descripcion}" class="form-control" id="descripcion"´placeholder="Escribe la descripción del producto"
+                                           name="descripcion" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{descripcion}">Campo obligatorio</div>
+                                </div>  
+
+                                <div class="form-group">
+                                    <label for="existencia">Existencia</label>
+                                    <input type="number" th:field="*{existencia}" class="form-control" id="existencia"´placeholder="Escribe la existencia del producto"
+                                           name="existencia" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{existencia}">Campo obligatorio</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="imagen">Inserta imagen</label>
+                                    <input type="text" th:field="*{imagen}" class="form-control" id="imagen"´placeholder="Inserta la imágen del cliente"
+                                           name="imagen" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{imagen}">Campo obligatorio</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 justify-content-center">
+                                <div class="form-group">
+                                    <label for="unidad_medida">Inserta unidad de medida del producto</label>
+                                    <input class="form-control" th:field="*{unidad_medida}" id="unidad_medida" name="unidad_medida" 
+                                           required>
+
+                                    </input>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{unidad_medida}">Campo obligatorio</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="precio_compra">Inserta el precio de compra</label>
+                                    <input type="text" th:field="*{precio_compra}" class="form-control" id="precio_compra"´placeholder="Inserta el precio de compra"
+                                           name="precio_compra" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{precio_compra}">Campo obligatorio</div>
+                                </div><!-- comment -->
+
+                                <div class="form-group">
+                                    <label for="precio_venta">Inserta el precio de venta</label>
+                                    <input type="text" th:field="*{precio_venta}" class="form-control" id="precio_venta"´placeholder="Inserta el precio de venta"
+                                           name="precio_venta" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback" th:errors="*{precio_venta}">Campo obligatorio</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="catalogo">Inserta a que catálogo pertenece</label>
+                                    <input class="form-control" th:field="*{catalogo}" id="catalogo" name="catalogo"
+                                           required>
+                                    </input>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="registerNewProducto" type="submit" class="btn btn-success mt-3">Actualizar</button>
+                        <a th:href="@{/producto/mostrar}" class="btn btn-danger mt-3">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </section>
         <br>
-        <div class="card bg-dark text-white">
-            <h2 class="card-header border-bottom border-white">Editar producto</h2>
-
-            <div class="card-body">
-
-<!--                <form name="form" action="#" method="get">
-                    <div class="row">
-                        <div
-                            class="form-group  col-md-12 col-lg-6 d-none d-xs-none d-sm-none d-md-none d-lg-block">
-                            <label>Seleccione imágenes: <span class="text-danger" id="imagen">*</span></label>
-                            <img *ngIf="url" [src]="url" class="rounded mb-3" width="180">
-                            <input type="file" multiple (change)="detectFiles($event)">
-                        </div>
-                        <div class="form-group col-md-12 col-lg-6  border-start border-light">
-                            <label for="txtclave">Nombre:<span class="text-danger" id="marca">*</span></label>
-                            <input pattern="[a-zA-Z0-9_.-áéíóúÁÉÍÓÚ]+" type="text" name="nombre"
-                                class="form-control bord" id="nombre" placeholder="Ingrese el nombre del producto"
-                                required>
-
-                            <label>Descripción: <span class="text-danger" id="marca">*</span></label>
-                            <textarea pattern="[a-zA-Z0-9,.áéíóúÁÉÍÓÚ]+" name="descripcion" class="form-control bord"
-                                id="descripcion" placeholder="Ingrese la descripción del producto" required></textarea>
-
-                            <label>Cantidades: <span class="text-danger" id="marca">*</span></label>
-                            <input pattern="[a-zA-Z0-9,.áéíóúÁÉÍÓÚ]+" type="text" name="cantidades"
-                                class="form-control bord" id="cantidades" placeholder="Ingrese la cantidad y medida"
-                                required>
-
-                            <label>Precio:<span class="text-danger" id="marca">*</span></label>
-                            <input pattern="[0-9.]+" type="number" name="precio" class="form-control bord" id="precio"
-                                placeholder="Ingrese el precio del producto" required>
-
-                            <label>Existencia:<span class="text-danger" id="marca">*</span></label>
-                            <input pattern="[0-9]+" type="number" name="existencia" class="form-control bord"
-                                id="existencia" placeholder="Ingrese la existencia del producto" required>
-                        </div>
-
-                        <div class="form-group col-md-6 d-lg-none d-xl-none border-start border-light ">
-                            <label>Seleccione imágenes: <span class="text-danger" id="imagen">*</span></label>
-                            <img *ngIf="url" [src]="url" class="rounded mb-3" width="180">
-                            <input type="file" multiple (change)="detectFiles($event)">
-                        </div>
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-success font-weight-bold" id="enviar">Registrar
-                        <icon class="fas fa-check">
-                        </icon>
-                    </button>
-
-                    <a class="btn btn-danger font-weight-bold" id="btn" href="listaProductos.html">Cancelar
-                        <icon class="fas fa-times"></icon>
-                    </a>
-
-                </form>-->
-                
-                <form class="was-validated" id="formulario" th:object="${producto}" th:action="@{/producto/editarproducto/}" method="post">
-            <input type="hidden" th:field="*{folio}">
-            <div class="form-group">
-                
-                <label for="producto">Nombre del producto</label>
-                <input type="text" field="*{nombreproducto}" class="form-control" id="nombreproducto" placeholder="Encriba el nombre del producto"
-                       name="nombreproducto" required><!-- comment -->
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{nombreproducto}">Campo obligatorio</div>
+        <footer>
+            <div class="card text-center fondoBarra">
+                <div class="card-header text-light">
+                    Acerca de nosotros
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-light">DXN</h5>
+                    <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
+                    <img th:src="@{/img/logo.webp}" alt="" width="100" height="70">
+                </div>
+                <div class="card-footer text-muted">
+                    Copyright 2021 &copy
+                </div>
             </div>
-            
-           
-            <div class="form-group">
-                <label for="descripcion">Descripcion</label>
-                <input type="text" field="+{descripcion}" class="form-control" id="descripcion"´placeholder="Escribe la descripción del producto"
-                       name="descripcion" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{descripcion}">Campo obligatorio</div>
-            </div>  
-            
-            <div class="form-group">
-                <label for="existencia">Existencia</label>
-                <input type="number" field="*{existencia}" class="form-control" id="existencia"´placeholder="Escribe la existencia del producto"
-                       name="existencia" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{existencia}">Campo obligatorio</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="imagen">Inserta imagen</label>
-                <input type="text" field="*{imagen}" class="form-control" id="imagen"´placeholder="Inserta la imágen del cliente"
-                       name="imagen" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{imagen}">Campo obligatorio</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="unidad_medida">Inserta unidad de médida del producto</label>
-<!--                <input type="text" field="*{unidad_medida}" class="form-control" id="unidad_medida"´placeholder="Inserta la unidad de medida del producto"
-                       name="unidad_medida" required>-->
+        </footer>
 
-            <select class="form-control" field="*{unidad_medida}" id="unidad_medida"´placeholder="Inserta la unidad de medida del producto"
-                    name="unidad_medida" required>
-                <option>KG</option>
-                <option>Cajas</option>
-                <option>Unidad</option>
-                <option>Paquete</option>
-                <option>G</option>
-
-            </select>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{unidad_medida}">Campo obligatorio</div>
-            </div><!-- comment -->
-            
-            <div class="form-group">
-                <label for="precio_venta">Inserta el precio de venta</label>
-                <input type="text" field="*{precio_venta}" class="form-control" id="precio_venta"´placeholder="Inserta el precio de venta"
-                       name="precio_venta" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{precio_venta}">Campo obligatorio</div>
-            </div>
-            
-            <div class="form-group">
-                <label for="precio_compra">Inserta el precio de compra</label>
-                <input type="text" field="*{precio_compra}" class="form-control" id="precio_compra"´placeholder="Inserta el precio de compra"
-                       name="precio_compra" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{precio_compra}">Campo obligatorio</div>
-            </div><!-- comment -->
-            
-            <div class="form-group">
-                <label for="catalogo">Inserta a que catálogo pertenece</label>
-                <input type="text" field="*{catalogo}" class="form-control" id="catalogo"´placeholder="Inserta el catálogo"
-                       name="catalogo" required>
-                <div class="valid-feedback"></div>
-                <div class="invalid-feedback" th:errors="*{catalogo}">Campo obligatorio</div>
-            </div>
-            
-            
-            <button id="registerNewProducto" type="submit" class="btn btn-success mt-3">Registrar</button>
-            <a th:href="@{/producto/mostrar}" class="btn btn-danger mt-3">Cancelar</a>
-         </form>
-            </div>
-        </div>
-    </section>
-    <br>
-    <footer>
-        <div class="card text-center fondoBarra">
-            <div class="card-header text-light">
-                Acerca de nosotros
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-light">DXN</h5>
-                <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
-                <img th:src="@{/img/logo.webp}" alt="" width="100" height="70">
-            </div>
-            <div class="card-footer text-muted">
-                Copyright 2021 &copy
-            </div>
-        </div>
-    </footer>
-
-</body>
+    </body>
 
 </html>

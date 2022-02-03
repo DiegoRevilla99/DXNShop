@@ -1,0 +1,151 @@
+<htm xmlns:th="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"></htm>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuario</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" th:href='@{/css/altaProd.css}'>
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+
+    <body class="fondo">
+    <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img th:src="@{/img/logo.webp}" alt="" width="50" height="40">
+            </a>
+            <a class="navbar-brand" href="#">DXN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{'/usuario/perfil'}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/tarjeta/agregar-tarjeta'}">Añadir tarjeta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{'/tarjeta/mostrar_tarjetas'}">Mi tarjeta</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
+                               data-bs-toggle="dropdown" aria-expanded="true">
+                                Catálogo de productos
+                            </a>
+                            <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/1'}">Alimentos y Bebidas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/2'}">Suplementos Alimenticios</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/3'}">Cuidado Personal</a></li>
+                                <li>
+                                    <hr class="dropdown-divider bg-light">
+                                </li>
+                                <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/4'}">Cuidado de la Piel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Cerrar sesión</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container w-100">
+        <br>
+        <div class="card bg-dark text-white">
+            <h2 class="card-header border-bottom border-white text-center">EDITAR DATOS USUARIO</h2>
+
+            <div class="card-body">
+             <form name="formulario_reg" class="was-validated" id="formulario" th:object="${usuario}" th:action="@{/usuario/editarusuario/}" method="post">
+                                    <div class="row">
+                                        <input type="hidden" th:field="*{email}">
+
+                                        <div class="col-md-6">
+                                          
+                                            <div class="mb-3">
+                                                <label for="nombre">Nombre</label>
+                                                <input type="text" th:field="*{nombre}" class="form-control" id="nombre"´placeholder="Escribe nombre del cliente"
+                                                       name="nombre" required>
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{nombre}">Campo obligatorio</div>
+                                            </div>
+                                              <div class="mb-3">
+                                                <label for="apellidos">Apellidos</label>
+                                                <input type="text" th:field="*{apellidos}" class="form-control" id="apellidos"´placeholder="Escribe apellidos del cliente"
+                                                       name="apellidos" required>
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{apellidos}">Campo obligatorio</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="telefono">Télefono</label>
+                                                <input type="text" th:field="*{telefono}" class="form-control" id="telefono"´placeholder="Escribe telefono del cliente"
+                                                       name="telefono" required>
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{telefono}">Campo obligatorio</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="pass">Pass</label>
+                                                <input type="password" th:field="*{pass}" class="form-control" id="pass" placeholder="Escribe pass del cliente"
+                                                       name="pass" required>
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{pass}">Campo obligatorio</div>
+                                            </div>
+                                            <input type="hidden" th:field="*{rol_id}">
+                                                
+                                            <button id="editarusuario" type="submit" class="btn btn-success">Actualizar</button>
+                                            <a th:href="@{/usuario/mostrar}" class="btn btn-warning">Ver todos</a>
+                                        </div>           
+                                       
+                                </form>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                </section>
+            </div>
+
+            <footer>
+        <div class="card text-center fondoBarra">
+            <div class="card-header text-light">
+                Acerca de nosotros
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-light">DXN</h5>
+                <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
+                <img th:src="@{/img/logo.webp}" alt="" width="100" height="70">
+            </div>
+            <div class="card-footer text-muted">
+                Copyright 2021 &copy
+            </div>
+        </div>
+    </footer>
+        </section>
+    </body>
+
+</html>

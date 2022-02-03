@@ -1,15 +1,26 @@
-<<<<<<< HEAD
-com\example\DXNShop\cliente\ClienteConfig.class
-com\example\DXNShop\cliente\ClienteRepository.class
-com\example\DXNShop\cliente\ClienteService.class
-com\example\DXNShop\DxnShopApplication.class
-com\example\DXNShop\cliente\Cliente.class
-com\example\DXNShop\cliente\ClienteController.class
-=======
+com\example\DXNShop\tarjeta\TarjetaRepository.class
 com\example\DXNShop\usuario\UsuarioController.class
 com\example\DXNShop\usuario\Usuario.class
+com\example\DXNShop\catalogo\CatalogoService.class
+com\example\DXNShop\carrito\CarritoRepository.class
+com\example\DXNShop\tarjeta\Tarjeta.class
+com\example\DXNShop\catalogo\Catalogo.class
+com\example\DXNShop\producto\ProductoRepository.class
+com\example\DXNShop\producto\ProductoService.class
+com\example\DXNShop\catalogo\CatalogoConfig.class
 com\example\DXNShop\DxnShopApplication.class
+com\example\DXNShop\producto\ProductoConfig.class
+com\example\DXNShop\catalogo\CatalogoRepository.class
+com\example\DXNShop\producto\ProductoController.class
+com\example\DXNShop\carrito\Carrito.class
+com\example\DXNShop\catalogo\CatalogoController.class
 com\example\DXNShop\usuario\UsuarioService.class
+com\example\DXNShop\carrito\CarritoService.class
+com\example\DXNShop\tarjeta\TarjetaService.class
 com\example\DXNShop\usuario\UsuarioConfig.class
+com\example\DXNShop\carrito\CarritoConfig.class
 com\example\DXNShop\usuario\UsuarioRepository.class
->>>>>>> 6f8846ca685131ccb2b3ceb8c34c1dcfd0b5be70
+com\example\DXNShop\tarjeta\TarjetaConfig.class
+com\example\DXNShop\tarjeta\TarjetaController.class
+com\example\DXNShop\carrito\CarritoController.class
+com\example\DXNShop\producto\Producto.class

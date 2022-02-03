@@ -1,0 +1,231 @@
+<htm xmlns:th="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"></htm>
+<html lang="es">
+    <head>
+        <title>Tarjetas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script><!-- comment -->
+
+        <link rel="stylesheet" th:href='@{/css/altaProd.css}'>
+        <script>
+
+            function validarTelefonoT() {
+                const regex = /^[0-9]*$/;
+                console.log(document.getElementById("cvv").value);
+                var inputcvv = (document.getElementById("cvv").value);
+                const numero = regex.test(inputcvv);
+
+                if (!numero) {
+                    document.getElementById("cvv").value = "";
+                    document.getElementById("cvv").style.background = '#FFDDDD';
+                    document.getElementById("cvv").focus();
+                } else {
+                    document.getElementById("cvv").style.background = '#FFFFFF';
+                }
+            }
+
+            function validarFechaVencimiento() {
+                const regex = /^\d{2}\/\d{2}$/;
+                var inputcvv = (document.getElementById("vencimiento").value);
+                const numero = regex.test(inputcvv);
+
+                if (!numero) {
+                    document.getElementById("vencimiento").value = "";
+                    document.getElementById("vencimiento").style.background = '#FFDDDD';
+                    document.getElementById("vencimiento").focus();
+                } else {
+                    document.getElementById("vencimiento").style.background = '#FFFFFF';
+                }
+            }
+
+            function validarTarjeta() {
+                const regex = /^[0-9]*$/;
+                console.log(document.getElementById("numero").value);
+                var inputcvv = (document.getElementById("numero").value);
+                const numero = regex.test(inputcvv);
+
+                if (!numero || document.getElementById("numero").value.length != 16) {
+                    document.getElementById("numero").value = "";
+                    document.getElementById("numero").style.background = '#FFDDDD';
+                    document.getElementById("numero").focus();
+                } else {
+                    document.getElementById("numero").style.background = '#FFFFFF';
+                }
+            }
+
+            function validarC1() {
+                if (document.getElementById("banco").value.length == 0) {
+                    document.getElementById("banco").value = "";
+                    document.getElementById("banco").style.background = '#FFDDDD';
+                    document.getElementById("banco").focus();
+                } else {
+                    document.getElementById("banco").style.background = '#FFFFFF';
+                }
+
+            }
+            function validarC2() {
+                if (document.getElementById("usuario").value.length == 0) {
+                    document.getElementById("usuario").value = "";
+                    document.getElementById("usuario").style.background = '#FFDDDD';
+                    document.getElementById("usuario").focus();
+                } else {
+                    document.getElementById("usuario").style.background = '#FFFFFF';
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-dark fondoBarra">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img th:src="@{/img/logo.webp}"  alt="" width="50" height="40">
+                    </a>
+                    <a class="navbar-brand" href="#">DXN</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" th:href="@{'/usuario/perfil'}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{'/tarjeta/agregar-tarjeta'}">Añadir tarjeta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" th:href="@{'/tarjeta/mostrar_tarjetas'}">Mi tarjeta</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" type="button"
+                                   data-bs-toggle="dropdown" aria-expanded="true">
+                                    Catálogo de productos
+                                </a>
+                                <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/1'}">Alimentos y Bebidas</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider bg-light">
+                                    </li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/2'}">Suplementos Alimenticios</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider bg-light">
+                                    </li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/3'}">Cuidado Personal</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider bg-light">
+                                    </li>
+                                    <li><a class=" dropdown-item text-light bg-dark" th:href="@{'/catalogo/mostrarProductos/4'}">Cuidado de la Piel</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" th:href="@{'/usuario/index'}">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <section class="fondo">
+            <!--Agregar aqui su contenido-->
+            <div class="container">
+                <section id="HistorialDevoluciones" class="container w-100">
+                    <p class="h1 pt-4 text-center">Medio de Pago</p>
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="card text-white bg-dark mb-3" style="max-width: 55rem;">
+                            <div class="card-header border-bottom border-light">
+                                <h3 class="text-center">AGREGA TU NUEVA TARJETA</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="was-validated" id="formulario" th:object="${tarjeta}" th:action="@{/tarjeta/agregar/}" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="usuario">Numero de tarjeta</label>
+                                                <input type="text" field="*{numero}" class="form-control" id="numero" placeholder="1234 1234 1234 1234"
+                                                       name="numero" required maxlength="16" onblur="validarTarjeta()" ><!-- comment -->
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{numero}">Campo obligatorio</div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label" for="apellidos">CVV</label>
+                                                <input type="text" field="*{cvv}" class="form-control" id="cvv" placeholder="Escribe tu CVV"
+                                                       name="cvv" required maxlength="4" onblur="validarTelefonoT()">
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{cvv}">Campo obligatorio</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="telefono">Vencimiento</label>
+                                                <input type="text" field="*{vencimiento}" class="form-control" id="vencimiento" placeholder="02/30"
+                                                       name="vencimiento" maxlength="5" required onblur="validarFechaVencimiento()">
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{vencimiento}">Campo obligatorio</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-5">
+                                            <div class="mb-3">                                                
+                                                <label class="form-label" for="email">Banco</label>
+                                                <input type="text" field="*{banco}" class="form-control" id="banco" placeholder="Escribe el nombre de tu banco"
+                                                       name="banco" required onblur="validarC1()">
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{banco}">Campo obligatorio</div>
+                                            </div>
+                                            <div class="mb-3">                                                
+                                                <label class="form-label" for="email">Correo: </label>
+                                                <input type="email" field="*{usuario}" class="form-control" id="usuario" placeholder="Escribe tu correo electrónico"
+                                                       name="usuario" required onblur="validarC2()">
+                                                <div class="valid-feedback"></div>
+                                                <div class="invalid-feedback" th:errors="*{usuario}">Campo obligatorio</div>
+                                            </div>
+                                            <div class="mb-3" style="text-align: center">
+                                                <br>
+                                                <button  id="registerNewTarjeta" type="submit" class="btn btn-primary">Guardar</button>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                            <br>
+                                        </div>            
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                </section>
+            </div>
+
+            <footer>
+                <div class="card text-center fondoBarra">
+                    <div class="card-header text-light">
+                        Acerca de nosotros
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-light">DXN</h5>
+                        <p class="card-text text-light">Página Diseñada Por [Inserte Nombre del equipo]</p>
+                        <img th:src="@{/img/logo.webp}"  alt="" width="100" height="70">
+                    </div>
+                    <div class="card-footer text-muted">
+                        Copyright 2021 &copy
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </body>
+
+</html>

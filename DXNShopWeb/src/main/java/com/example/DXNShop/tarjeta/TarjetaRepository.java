@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TarjetaRepository extends JpaRepository<Tarjeta, String>{
-    //Consular si ya existe una tarjeta
     @Query("Select s from Tarjeta s where s.numero =?1")
     Optional<Tarjeta> findByNumero(String tarjeta);
 }

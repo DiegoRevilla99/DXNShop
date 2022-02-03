@@ -5,6 +5,8 @@
 package com.example.DXNShop.tarjeta;
 
 import com.example.DXNShop.usuario.Usuario;
+import com.example.DXNShop.usuario.UsuarioRepository;
+import java.util.Optional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -37,8 +38,8 @@ public class Tarjeta {
     @DateTimeFormat (pattern = "MM/yy")
     private String vencimiento;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "email")
+    @ManyToOne
+    @JoinColumn(name = "usuario_email")
     private Usuario usuario;
 
     public Tarjeta() {
@@ -56,36 +57,36 @@ public class Tarjeta {
         return numero;
     }
 
-    public String getBanco() {
-        return banco;
-    }
-
-    public int getCvv() {
-        return cvv;
-    }
-
-    public String getVencimiento() {
-        return vencimiento;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public String getBanco() {
+        return banco;
     }
 
     public void setBanco(String banco) {
         this.banco = banco;
     }
 
+    public int getCvv() {
+        return cvv;
+    }
+
     public void setCvv(int cvv) {
         this.cvv = cvv;
     }
 
+    public String getVencimiento() {
+        return vencimiento;
+    }
+
     public void setVencimiento(String vencimiento) {
         this.vencimiento = vencimiento;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
     }
 
     public void setUsuario(Usuario usuario) {

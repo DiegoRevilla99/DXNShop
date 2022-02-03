@@ -18,8 +18,8 @@ public class CarritoConfig {
      @Bean
     CommandLineRunner commandLineRunnerCarrito(CarritoRepository repository) {
         return args -> {
-            Carrito carrito = new Carrito(new Usuario("alejandro@gmail.com"));
-            repository.save(carrito);
+            //Carrito carrito = new Carrito(new Usuario("alejandro@gmail.com"));
+            //repository.save(carrito);
         };
     };
 }
