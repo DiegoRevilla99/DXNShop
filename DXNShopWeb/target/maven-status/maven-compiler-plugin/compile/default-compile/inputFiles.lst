@@ -1,40 +1,26 @@
-<<<<<<< HEAD
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoRepository.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\cliente\ClienteController.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\cliente\Cliente.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\cliente\ClienteConfig.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoService.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\cliente\ClienteRepository.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\DxnShopApplication.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoConfig.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoConfig.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoController.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\Catalogo.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoService.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\Producto.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\cliente\ClienteService.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoRepository.java
-D:\xeng_\Escritorio\Prog Web\Proyecto\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoController.java
-=======
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaConfig.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaService.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoRepository.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaController.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\Carrito.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoService.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaRepository.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioRepository.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoController.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\DxnShopApplication.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoRepository.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\Producto.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioConfig.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoService.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoConfig.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\Tarjeta.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\Usuario.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioController.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioService.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoController.java
-C:\Users\aleja\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoConfig.java
->>>>>>> 6f8846ca685131ccb2b3ceb8c34c1dcfd0b5be70
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\DxnShopApplication.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoController.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoConfig.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoService.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoController.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaConfig.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioService.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\Usuario.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioRepository.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoRepository.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioConfig.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoService.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoConfig.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaService.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\Producto.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\Catalogo.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaRepository.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\TarjetaController.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoRepository.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoConfig.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\catalogo\CatalogoController.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\tarjeta\Tarjeta.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\producto\ProductoService.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\usuario\UsuarioController.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\CarritoRepository.java
+C:\Users\JOSELYNE\Documents\GitHub\DXNShop\DXNShopWeb\src\main\java\com\example\DXNShop\carrito\Carrito.java
